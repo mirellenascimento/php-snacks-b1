@@ -4,14 +4,14 @@ dovrà contenere lo stesso numero più di una volta -->
 <?php
 
 $array = [];
-for ($i=0; count($array) < 15; $i++) {
-  $number = rand();
+while (count($array) < 15) {
+  $number = rand(1, 100);
   if (!in_array($number, $array)) {
       $array[] = $number;
   };
-  echo $i + 1 . ": " . $array[$i] . "<br>";
 };
-
-
+foreach ($array as $key => $value) {
+  echo $key + 1 . ": " . $value . "<br>";
+}
 
 ?>

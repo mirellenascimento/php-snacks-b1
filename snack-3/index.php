@@ -63,12 +63,12 @@ $posts = [
     ],
 ];
 
-foreach ($posts as $key => $value) {
-  echo "<h1>" . $key . "</h1><br>";
-  for ($i=0; $i < count($value); $i++) {
-    echo "<h2>" . $value[$i]['title'] . "</h2>";
-    echo "<h4>" . $value[$i]['author'] . "</h4>";
-    echo "</p>" . $value[$i]['text'] . "<p><br>";
+foreach ($posts as $date => $items) {
+  echo "<h1>" . $date . "</h1><br>";
+  foreach ($items as $text){
+    echo "<h2>" . $text['title'] . "</h2>";
+    echo "<h4>" . $text['author'] . "</h4>";
+    echo "</p>" . $text['text'] . "<p><br>";
   }
   echo "<hr><br><br><br>";
 }

@@ -33,8 +33,8 @@ e i PM in un rettangolo verde. -->
 <div style="background-color: grey; border: 1px solid black; width: 50%; margin: auto">
   <?php
   //Teachers with grey background
-    for ($i=0; $i < count($db['teachers']); $i++) {
-      echo "<p style=\"text-align: center\">" . $db['teachers'][$i]['name'] . " " . $db['teachers'][$i]['lastname'] . "<p>";
+    foreach ($db['teachers'] as $teacher){
+      echo "<p style=\"text-align: center\">" . $teacher['name'] . " " . $teacher['lastname'] . "<p>";
     };
   ?>
 </div>
@@ -42,8 +42,8 @@ e i PM in un rettangolo verde. -->
 <div style="background-color: green; border: 1px solid black; width: 50%; margin: auto">
   <?php
   //PMs with grey background
-    for ($i=0; $i < count($db['pm']); $i++) {
-      echo "<p style=\"text-align: center\">" . $db['pm'][$i]['name'] . " " . $db['pm'][$i]['lastname'] . "<p>";
+    foreach ($db['pm'] as $pm) {
+      echo "<p style=\"text-align: center\">" . $pm['name'] . " " . $pm['lastname'] . "<p>";
     };
   ?>
 </div>

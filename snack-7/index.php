@@ -59,14 +59,10 @@ $students = [
   ],
 ];
 
-for ($i=0; $i < count($students); $i++) {
-  $students[$i]['median'] = 0;
-  $gradesSum = 0;
-  foreach ($students[$i]['grades'] as $key => $value) {
-    $gradesSum += $value;
-  }
-  $media = $gradesSum/count($students[$i]['grades']);
-  $students[$i]['median'] = round($media, 2);
+foreach ($students as $student) {
+  $student['median'] = 0;
+  $media = array_sum($student['grades'])/count($student['grades']);
+  $student['median'] = round($media, 2);
 
   $mediaColor = 0;
   if ($media > 6) {
@@ -75,8 +71,8 @@ for ($i=0; $i < count($students); $i++) {
     $mediaColor = 'red';
   }
 
-  echo "<h3> Alunno: " . $students[$i]['name'] . " " . $students[$i]['surname'] . "</h3>";
-  echo "<h3 style=\"color: " . $mediaColor . "\">Media: " . $students[$i]['median'] . "</style></h3> <hr>";
+  echo "<h3> Alunno: " . $student['name'] . " " . $student['surname'] . "</h3>";
+  echo "<h3 style=\"color: " . $mediaColor . "\">Media: " . $student['median'] . "</style></h3> <hr>";
 }
 
 ?>
